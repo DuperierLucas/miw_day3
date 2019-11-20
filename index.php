@@ -11,8 +11,6 @@ if (!empty($_POST['email'])) {
 
 }
 
-$body_class = "";
-
 // Display delivery status, (tips anti-refreshing) 
 if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
 
@@ -34,14 +32,46 @@ if (!empty($_GET['delivery']) and $_GET['delivery'] === "sent") {
         .delivery_sent {
             background-color: green;
         }
+        body{
+            background-image: url("img/component.png");
+            background-repeat: no-repeat;
+            width: 1422px;
+        }
+        .inscription{
+            margin-top: 200px;
+            margin-left: 200px;
+        }
+        .input_mail, .input_submit{
+            border-radius: 1px;
+            font-size: 20px;
+        }
+        .input_mail{
+            padding: 20px;
+            width: 300px;
+            border:1px solid;
+        }
+        .input_submit{
+            padding: 20px 70px 20px 20px;
+            font-weight: bold;
+            width: 200px;
+            background-color: #C30078;
+            color:white;
+            border:0px;
+            background-image : url("img/Vip.png");
+            background-repeat: no-repeat;
+            /*background-position: right;*/
+            background-position-x: 90%;
+            background-position-y: 50%;
+            background-size: 40px;
+        }
     </style>
 
 </head>
 <body class="<?= $body_class ?>">
 
-<form action="#" method="post">
-    <input type="email" name="email" placeholder="Ton email de star..." required/>
-    <input type="submit" value="Submit"/>
+<form class="inscription" action="send_email.php" method="post">
+    <input class="input_mail" type="email" name="email" placeholder="Ton email de star..." required/>
+    <input class="input_submit" type="submit" value="Inscrit-toi !"/>
 </form>
 
 </body>
